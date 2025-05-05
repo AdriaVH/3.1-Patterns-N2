@@ -14,7 +14,7 @@ public class Address {
 
     public Address(String streetNumber, String streetName,
                    String apartmentOrUnit, String city, String province,
-                   String autonomousCommunity, String postalCode) {
+                   String autonomousCommunity, String postalCode, String country) {
         this.streetNumber = streetNumber;
         this.streetName = streetName;
         this.apartmentOrUnit = apartmentOrUnit;
@@ -22,5 +22,50 @@ public class Address {
         this.province = province;
         this.autonomousCommunityOrCounty = autonomousCommunity;
         this.postalCode = postalCode;
+        this.country = country;
     }
+    public Address(Address address) {
+        this.streetNumber = address.getStreetNumber();
+        this.streetName = address.getStreetName();
+        this.apartmentOrUnit = address.getApartmentOrUnit();
+        this.city = address.getCity();
+        this.province = address.getProvince();
+        this.autonomousCommunityOrCounty = address.getAutonomousCommunityOrCounty();
+        this.postalCode = address.getPostalCode();
+        this.country = address.getCountry();
+    }
+
+    public String getStreetNumber() {
+        return streetNumber;
+    }
+
+    public String getStreetName() {
+        return streetName;
+    }
+
+    public String getApartmentOrUnit() {
+        return apartmentOrUnit;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public String getAutonomousCommunityOrCounty() {
+        return autonomousCommunityOrCounty;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+
 }

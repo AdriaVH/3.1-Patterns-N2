@@ -1,18 +1,23 @@
-package classes.factories;
+package factories;
 
 import classes.Address;
 import classes.ContactDetails;
-import classes.model.ContactListFactory;
+import model.ContactListFactory;
 
 public class UKContactListFactory implements ContactListFactory {
     private final String PREFIX = "+44 ";
+    private final String COUNTRY = "France";
+
+    public UKContactListFactory() {
+    }
 
     @Override
     public Address createAddress(String streetNumber, String streetName,
                                  String apartmentOrUnit, String city, String province,
-                                 String autonomousCommunity, String county, String postalCode) {
-        return new Address("","","",
-                        "","","","");
+                                 String autonomousCommunityOrCounty, String zipCode) {
+        return new Address(streetNumber, streetName,
+                apartmentOrUnit, city, province,
+                autonomousCommunityOrCounty, zipCode, COUNTRY);
     }
 
     @Override
